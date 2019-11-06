@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useReducer} from 'react';
+import {todoReducer, initState, ADD_ITEM, TOGGLE_COMPLETED, CLEAR_TODO} from './reducers/todoReducer';
+
 import './App.css';
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 
 function App() {
+  const [state, dispatch] =useReducer(todoReducer, initState);
+
+  const addItem = item => {
+    dispatch({
+      type: ADD_ITEM,
+      payload: item
+    });
+  };
+
+  const clearItems = () => {
+    dispatch({
+      type: CLEAR_TODO
+    });
+  };
+
+  const toggleItem = id => {
+    dispatch({
+      type: TOGGLE_COMPLETED,
+      payload: id
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Todo List</h1>
+      <TodoForm addItem={addItem}
+                clearItems={clearItems}
+                />
+      <TodoList todoItems={state.todoItems}
+                toggleItem={toggleItem} />
     </div>
   );
 }
