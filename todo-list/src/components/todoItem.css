@@ -1,3 +1,35 @@
-.completed {
-    text-decoration: line-through;
+.todoList {
+    border: 5px solid #141e37;
+    background: #01b88c;
+    width: 80vw;
+    max-width: 800px;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+.todoContainer {
+    border: 2px solid #01b88c;
+    background: #141e37;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.item {
+    border: 4px solid #01b88c;
+    background: #141e37;
+    color: #ffc905;
+    width: 90%;
+    margin: 1% auto;
+    padding: 2%;
+    font-size: 2rem;
+}
+
+.completed {
+    text-decoration: line-through #fc6645;
+}
+

@@ -7,8 +7,8 @@ export const initState = {
     todoItems: [
         {
             id: Date.now(),
-            item: '',
-            completed: false,
+            item: 'Add Todos',
+            completed: true,
         }
 
     ]

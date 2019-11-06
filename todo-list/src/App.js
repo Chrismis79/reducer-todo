@@ -6,6 +6,7 @@ import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import './App.css';
 import '../src/components/todoItem.css';
+import '../src/components/todoForm.css';
 
 function App() {
   const [state, dispatch] =useReducer(todoReducer, initState);
@@ -32,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Todo List</h1>
+      <h1>JUST DO IT</h1>
       <TodoForm addItem={addItem}
                 clearItems={clearItems}
                 />
