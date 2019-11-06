@@ -45,7 +45,7 @@ export const todoReducer = (todoState, action) => {
         case CLEAR_TODO:
             return {
                 ...todoState,
-                todoItems: todoState.todoItems.filter(item => item.completed)
+                todoItems: todoState.todoItems.filter(item => !item.completed)
             };
             default:
                 return todoState;        

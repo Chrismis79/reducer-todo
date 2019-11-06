@@ -1,9 +1,11 @@
 import React, {useReducer} from 'react';
 import {todoReducer, initState, ADD_ITEM, TOGGLE_COMPLETED, CLEAR_TODO} from './reducers/todoReducer';
 
-import './App.css';
+
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import './App.css';
+import '../src/components/todoItem.css';
 
 function App() {
   const [state, dispatch] =useReducer(todoReducer, initState);
